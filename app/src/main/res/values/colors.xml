@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="cyan_500" type="color">#00BCD4</item>
+    <item name="cyan_700" type="color">#0097A7</item>
+
+    <item name="indigo_500" type="color">#3F51B5</item>
+    <item name="indigo_700" type="color">#303F9F</item>
+
+    <item name="blue_500" type="color">#2196F3</item>
+    <item name="blue_700" type="color">#1976D2</item>
+
+    <item name="teal_500" type="color">#009688</item>
+    <item name="teal_700" type="color">#00796B</item>
+
+    <item name="red_500" type="color">#DB4336</item>
+    <item name="red_700" type="color">#B73221</item>
+</resources>

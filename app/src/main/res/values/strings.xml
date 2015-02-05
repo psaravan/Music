@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Music</string>
+    <string name="artists">Artists</string>
+    <string name="album_artists">Album Artists</string>
+    <string name="albums">Albums</string>
+    <string name="songs">Songs</string>
+    <string name="playlists">Playlists</string>
+    <string name="genres">Genres</string>
+    <string name="folders">Folders</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_example">Example action</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_player">Music</string>
+    <string name="hello_world">Hello world!</string>
+
+</resources>
