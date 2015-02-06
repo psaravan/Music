@@ -14,4 +14,16 @@
 
     <item name="red_500" type="color">#DB4336</item>
     <item name="red_700" type="color">#B73221</item>
+
+    <item name="dark_blue_500" type="color">#1048A7</item>
+    <item name="dark_blue_700" type="color">#0C3478</item>
+
+    <item name="dark_200" type="color">#232323</item>
+    <item name="dark_500" type="color">#131313</item>
+    <item name="dark_700" type="color">#000000</item>
+
+    <item name="blue_gray_200" type="color">#B0BEC5</item>
+    <item name="blue_gray_500" type="color">#607D8B</item>
+    <item name="blue_gray_700" type="color">#455A64</item>
+    <item name="blue_gray_900" type="color">#263238</item>
 </resources>

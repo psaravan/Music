@@ -2,6 +2,8 @@ package com.psaravan.music.Utils;
 
 import android.app.Application;
 import android.content.Context;
+import android.graphics.Point;
+import android.view.Display;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -46,4 +48,20 @@ public class App extends Application {
         window.setStatusBarColor(color);
     }
 
+    /**
+     * Calculates the dimensions of the current screen.
+     * @return An int array that contains the screen width and height in pixels.
+     */
+    public static int[] getScreenDimensions() {
+        WindowManager wm = (WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE);
+        Display display = wm.getDefaultDisplay();
+        Point point = new Point();
+
+        int[] dimens = new int[2];
+        display.getSize(point);
+        dimens[0] = point.x;
+        dimens[1] = point.y;
+
+        return dimens;
+    }
 }

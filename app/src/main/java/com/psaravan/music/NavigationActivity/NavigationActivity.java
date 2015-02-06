@@ -22,6 +22,15 @@ import com.psaravan.music.R;
  */
 public class NavigationActivity extends Activity implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
+    // Fragment IDs for the main body contents.
+    public static final int ARTISTS_FRAGMENT_ID = 1;
+    public static final int ALBUM_ARTISTS_FRAGMENT_ID = 2;
+    public static final int ALBUMS_FRAGMENT_ID = 3;
+    public static final int SONGS_FRAGMENT_ID = 4;
+    public static final int PLAYLISTS_FRAGMENT_ID = 5;
+    public static final int GENRES_FRAGMENT_ID = 6;
+    public static final int FOLDERS_FRAGMENT_ID = 7;
+
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
      */
@@ -36,6 +45,7 @@ public class NavigationActivity extends Activity implements NavigationDrawerFrag
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
+        getActionBar().setElevation(0.0f);
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getFragmentManager().findFragmentById(R.id.navigation_drawer);
@@ -52,32 +62,56 @@ public class NavigationActivity extends Activity implements NavigationDrawerFrag
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
-                .commit();
+        Fragment fragment = getContentFragment(position+1);
+
+        if (fragment!=null)
+            fragmentManager.beginTransaction()
+                    .replace(R.id.container, fragment)
+                    .commit();
+    }
+
+    public Fragment getContentFragment(int number) {
+        switch (number) {
+            case ARTISTS_FRAGMENT_ID:
+                return new ArtistsFragment();
+            case ALBUM_ARTISTS_FRAGMENT_ID:
+                return null;
+            case ALBUMS_FRAGMENT_ID:
+                return new AlbumsFragment();
+            case SONGS_FRAGMENT_ID:
+                return null;
+            case PLAYLISTS_FRAGMENT_ID:
+                return null;
+            case GENRES_FRAGMENT_ID:
+                return null;
+            case FOLDERS_FRAGMENT_ID:
+                return null;
+        }
+
+        return null;
     }
 
     public void onSectionAttached(int number) {
         switch (number) {
-            case 1:
+            case ARTISTS_FRAGMENT_ID:
                 mTitle = getString(R.string.artists);
                 break;
-            case 2:
+            case ALBUM_ARTISTS_FRAGMENT_ID:
                 mTitle = getString(R.string.album_artists);
                 break;
-            case 3:
+            case ALBUMS_FRAGMENT_ID:
                 mTitle = getString(R.string.albums);
                 break;
-            case 4:
+            case SONGS_FRAGMENT_ID:
                 mTitle = getString(R.string.songs);
                 break;
-            case 5:
+            case PLAYLISTS_FRAGMENT_ID:
                 mTitle = getString(R.string.playlists);
                 break;
-            case 6:
+            case GENRES_FRAGMENT_ID:
                 mTitle = getString(R.string.genres);
                 break;
-            case 7:
+            case FOLDERS_FRAGMENT_ID:
                 mTitle = getString(R.string.folders);
                 break;
         }
